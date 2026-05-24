@@ -73,7 +73,7 @@ async function loadReviews() {
           <td style="max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">"${r.quote}"</td>
           <td><span class="badge ${r.published ? 'badge-green' : 'badge-grey'}">${r.published ? 'Live' : 'Draft'}</span></td>
           <td>
-            <button class="btn-sm" onclick='editReview(${JSON.stringify(r)})'>Edit</button>
+            <button class="btn-sm" onclick='editReview(${JSON.stringify(r).replace(/'/g, "&#39;")})'>Edit</button>
             <button class="btn-sm btn-danger" onclick="deleteReview('${r.id}')">Delete</button>
           </td>
         </tr>`).join('')}
