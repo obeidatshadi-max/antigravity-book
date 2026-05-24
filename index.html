@@ -22,6 +22,18 @@
       </button>
     </form>
   </section>
+  <section id="reviews" style="padding:3rem 1rem;">
+    <h2 style="text-align:center;margin-bottom:2rem;">What Readers Say</h2>
+    <div data-dynamic="reviews" style="max-width:800px;margin:0 auto;">
+      <!-- Reviews will load here from Supabase -->
+    </div>
+  </section>
+  <section id="dialogues" style="padding:3rem 1rem;">
+    <h2 style="text-align:center;margin-bottom:2rem;">Dialogues</h2>
+    <div data-dynamic="dialogues" style="max-width:800px;margin:0 auto;">
+      <!-- Dialogues will load here from Supabase -->
+    </div>
+  </section>
   <section id="contact" style="padding:3rem 1rem;max-width:600px;margin:3rem auto;">
     <h2 style="text-align:center;margin-bottom:2rem;">Get in Touch</h2>
     <form data-type="contact" style="display:flex;flex-direction:column;gap:1rem;">
@@ -47,7 +59,9 @@
     </form>
   </section>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked@9/marked.min.js"></script>
   <script src="/js/supabase-client.js"></script>
   <script src="/js/forms.js"></script>
+  <script src="/js/content.js"></script>
 </body>
 </html>
