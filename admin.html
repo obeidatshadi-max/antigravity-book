@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — Antigravity</title>
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+
+<div id="login-screen">
+  <form id="login-form">
+    <h1>Antigravity Admin</h1>
+    <input type="email" name="email" placeholder="Email" required autocomplete="username">
+    <input type="password" name="password" placeholder="Password" required autocomplete="current-password">
+    <button type="submit">Login</button>
+    <p id="login-error"></p>
+  </form>
+</div>
+
+<div id="admin-panel">
+  <header id="admin-header">
+    <h1>Antigravity Admin</h1>
+    <button id="logout-btn">Logout</button>
+  </header>
+  <nav id="tab-nav">
+    <button class="tab-btn active" data-tab="reviews">Reviews</button>
+    <button class="tab-btn" data-tab="blog">Blog Posts</button>
+    <button class="tab-btn" data-tab="dialogues">Dialogues</button>
+    <button class="tab-btn" data-tab="page-content">Page Content</button>
+    <button class="tab-btn" data-tab="leads">Leads</button>
+    <button class="tab-btn" data-tab="contacts">Contacts</button>
+  </nav>
+  <div id="tab-area">
+    <div id="tab-reviews" class="tab-content active"></div>
+    <div id="tab-blog" class="tab-content"></div>
+    <div id="tab-dialogues" class="tab-content"></div>
+    <div id="tab-page-content" class="tab-content"></div>
+    <div id="tab-leads" class="tab-content"></div>
+    <div id="tab-contacts" class="tab-content"></div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@9/marked.min.js"></script>
+<script src="/js/supabase-client.js"></script>
+<script src="/js/admin.js"></script>
+</body>
+</html>
