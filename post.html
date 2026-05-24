@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post — Antigravity</title>
+  <style>
+    :root { --gold: #c9a84c; --bg: #0a0a0a; --text: #e8e8e8; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Georgia', serif; }
+    header { padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    header a { color: var(--gold); text-decoration: none; }
+    main { max-width: 760px; margin: 4rem auto; padding: 0 2rem; }
+    #post-title { font-size: 2rem; margin-bottom: 0.5rem; }
+    #post-date { font-size: 0.85rem; opacity: 0.6; margin-bottom: 2rem; }
+    #post-body { line-height: 1.8; }
+    #post-body h1,#post-body h2,#post-body h3 { margin: 1.5rem 0 0.5rem; }
+    #post-body p { margin-bottom: 1rem; }
+    #post-body ul,#post-body ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+    #post-body blockquote { border-left: 3px solid var(--gold); padding-left: 1rem; opacity: 0.8; margin: 1rem 0; }
+    #not-found { text-align: center; padding: 4rem; opacity: 0.6; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/blog.html">← All posts</a>
+    <a href="/">Antigravity</a>
+  </header>
+  <main>
+    <div id="not-found" style="display:none"><p>Post not found.</p><a href="/blog.html" style="color:var(--gold)">Back to blog</a></div>
+    <article id="post-content">
+      <h1 id="post-title"></h1>
+      <p id="post-date"></p>
+      <div id="post-body"></div>
+    </article>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked@9/marked.min.js"></script>
+  <script src="/js/supabase-client.js"></script>
+  <script>
+    async function loadPost() {
+      const slug = new URLSearchParams(window.location.search).get('slug');
+      if (!slug) { showNotFound(); return; }
+      const { data, error } = await window.db
+        .from('blog_posts')
+        .select('title, body, published_at')
+        .eq('slug', slug)
+        .single();
+      if (error || !data) { showNotFound(); return; }
+      document.title = data.title + ' — Antigravity';
+      document.getElementById('post-title').textContent = data.title;
+      if (data.published_at) {
+        document.getElementById('post-date').textContent =
+          new Date(data.published_at).toLocaleDateString('en-GB', { year:'numeric', month:'long', day:'numeric' });
+      }
+      document.getElementById('post-body').innerHTML = marked.parse(data.body);
+    }
+    function showNotFound() {
+      document.getElementById('post-content').style.display = 'none';
+      document.getElementById('not-found').style.display = 'block';
+    }
+    loadPost();
+  </script>
+</body>
+</html>
