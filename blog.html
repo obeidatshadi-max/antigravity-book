@@ -32,6 +32,9 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="/js/supabase-client.js"></script>
   <script>
+    function esc(s) {
+      return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
     async function loadPosts() {
       const { data, error } = await window.db
         .from('blog_posts')
@@ -44,7 +47,7 @@
       }
       container.innerHTML = data.map(p => `
         <div class="post-card">
-          <h2><a href="/post.html?slug=${encodeURIComponent(p.slug)}">${p.title}</a></h2>
+          <h2><a href="/post.html?slug=${encodeURIComponent(p.slug)}">${esc(p.title)}</a></h2>
           ${p.published_at ? `<p class="post-date">${new Date(p.published_at).toLocaleDateString('en-GB', { year:'numeric', month:'long', day:'numeric' })}</p>` : ''}
         </div>
       `).join('');
