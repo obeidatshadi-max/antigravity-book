@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antigravity — Publisher Information · Shadi Obeidat</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#07060e;
+  --deep:#0d0b1a;
+  --surface:rgba(255,255,255,0.04);
+  --border:rgba(255,255,255,0.08);
+  --border-gold:rgba(201,168,76,0.2);
+  --gold:#c9a84c;
+  --gold-l:#e8c97a;
+  --cream:#e8e0d0;
+  --text-dim:rgba(224,219,208,0.65);
+  --purple:#6B2D8B;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--cream);font-family:'Outfit',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden;}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 52px;height:64px;background:rgba(7,6,14,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.nav-left{display:flex;align-items:center;gap:14px;}
+.nav-logo-orbit{flex-shrink:0;}
+.nav-brand-text{display:flex;flex-direction:column;line-height:1.15;}
+.nav-brand-name{font-size:0.88rem;font-weight:700;letter-spacing:0.12em;color:var(--cream);}
+.nav-brand-name span{color:var(--gold);}
+.nav-brand-sub{font-size:0.55rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(224,219,208,0.35);}
+.nav-divider{width:1px;height:24px;background:var(--border-gold);}
+.nav-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;font-style:italic;color:var(--gold);letter-spacing:0.04em;text-shadow:0 0 16px rgba(201,168,76,0.3);}
+.nav-right{display:flex;gap:24px;align-items:center;}
+.nav-right a{font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;transition:color 0.2s;}
+.nav-right a:hover{color:var(--gold);}
+.nav-cta{padding:0.45rem 1.2rem;border:1px solid var(--gold);border-radius:4px;color:var(--gold)!important;}
+.nav-cta:hover{background:var(--gold);color:#000!important;}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 52px 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 80% 40%,rgba(107,45,139,0.18) 0%,transparent 65%),radial-gradient(ellipse 40% 50% at 15% 60%,rgba(201,168,76,0.06) 0%,transparent 55%);}
+.hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:2;}
+.hero-eyebrow{font-size:0.65rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,6vw,5.5rem);font-weight:300;line-height:0.92;color:var(--cream);margin-bottom:24px;}
+.hero-title em{font-style:italic;color:var(--gold-l);}
+.hero-sub{font-size:1.05rem;line-height:1.8;color:var(--text-dim);font-weight:300;max-width:440px;margin-bottom:32px;}
+.hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px;}
+.badge{display:inline-flex;align-items:center;gap:7px;padding:0.35rem 0.9rem;border:1px solid var(--border-gold);border-radius:2px;font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);}
+.badge svg{flex-shrink:0;}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-gold{padding:0.75rem 1.8rem;background:var(--gold);color:#000;font-weight:700;font-size:0.8rem;letter-spacing:0.14em;text-transform:uppercase;border:none;border-radius:3px;cursor:pointer;text-decoration:none;transition:background 0.2s;}
+.btn-gold:hover{background:var(--gold-l);}
+.btn-outline{padding:0.75rem 1.8rem;border:1px solid rgba(224,219,208,0.25);color:var(--cream);font-size:0.8rem;letter-spacing:0.14em;text-transform:uppercase;border-radius:3px;text-decoration:none;transition:border-color 0.2s,color 0.2s;}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+
+/* Book mockup */
+.hero-book{display:flex;justify-content:center;align-items:center;}
+.book-cover{width:260px;height:370px;background:linear-gradient(135deg,#1a0d2e 0%,#2a1040 40%,#1a0d2e 100%);border-radius:4px 14px 14px 4px;box-shadow:-8px 8px 40px rgba(0,0,0,0.6),4px 0 0 rgba(255,255,255,0.05) inset,0 0 0 1px rgba(201,168,76,0.15);position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px 24px;}
+.book-cover::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 35%,rgba(107,45,139,0.35) 0%,transparent 70%);}
+.book-orbit{position:relative;z-index:2;margin-bottom:20px;}
+.book-title-text{position:relative;z-index:2;text-align:center;}
+.book-title-text h2{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;font-style:italic;color:var(--gold-l);line-height:1.1;margin-bottom:8px;}
+.book-title-text p{font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(224,219,208,0.5);}
+.book-author-text{position:relative;z-index:2;margin-top:auto;text-align:center;border-top:1px solid rgba(201,168,76,0.2);padding-top:14px;width:100%;}
+.book-author-text p{font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(201,168,76,0.7);}
+.book-edition{position:absolute;top:14px;right:14px;z-index:2;font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(224,219,208,0.3);}
+
+/* ── SECTION BASE ── */
+section{padding:100px 52px;}
+.sec-inner{max-width:1100px;margin:0 auto;}
+.sec-label{display:block;font-size:0.65rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.2rem);font-weight:300;line-height:1.05;color:var(--cream);margin-bottom:20px;}
+.sec-title em{font-style:italic;color:var(--gold-l);}
+.sec-lead{font-size:1rem;line-height:1.85;color:var(--text-dim);font-weight:300;max-width:560px;}
+
+/* ── STATS STRIP ── */
+.stats{background:var(--deep);border-top:1px solid var(--border-gold);border-bottom:1px solid var(--border-gold);padding:0 52px;}
+.stats-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);}
+.stat{padding:40px 0;border-right:1px solid var(--border);text-align:center;}
+.stat:last-child{border-right:none;}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;color:var(--gold);line-height:1;margin-bottom:8px;}
+.stat-label{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(224,219,208,0.4);}
+
+/* ── CONCEPT ── */
+.concept{background:var(--bg);}
+.concept-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-top:60px;}
+.concept-text p{font-size:0.95rem;line-height:1.85;color:var(--text-dim);font-weight:300;margin-bottom:18px;}
+.concept-text strong{color:var(--cream);font-weight:400;}
+.concept-pillars{display:flex;flex-direction:column;gap:16px;}
+.pillar{display:flex;gap:18px;padding:20px;border:1px solid var(--border);border-radius:3px;background:var(--surface);}
+.pillar-icon{width:36px;height:36px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:rgba(201,168,76,0.08);border-radius:50%;border:1px solid var(--border-gold);}
+.pillar-body h4{font-size:0.8rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:5px;}
+.pillar-body p{font-size:0.82rem;line-height:1.7;color:var(--text-dim);}
+
+/* ── ENDORSEMENTS ── */
+.endorsements{background:var(--deep);border-top:1px solid var(--border);}
+.mg-quote{background:rgba(201,168,76,0.05);border:1px solid var(--border-gold);border-radius:3px;padding:48px;position:relative;margin-bottom:48px;}
+.mg-quote::before{content:'\201C';font-family:'Cormorant Garamond',serif;font-size:8rem;color:rgba(201,168,76,0.1);position:absolute;top:-10px;left:32px;line-height:1;}
+.mg-quote blockquote{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-style:italic;line-height:1.65;color:var(--cream);font-weight:300;position:relative;z-index:1;margin-bottom:24px;}
+.mg-attr{display:flex;align-items:center;gap:16px;}
+.mg-attr-dot{width:32px;height:1px;background:var(--gold);}
+.mg-attr-name{font-size:0.85rem;font-weight:600;color:var(--cream);}
+.mg-attr-role{font-size:0.78rem;color:rgba(224,219,208,0.5);margin-top:2px;}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.review-card{background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:28px;}
+.review-card blockquote{font-size:0.88rem;line-height:1.75;color:var(--text-dim);font-style:italic;margin-bottom:20px;}
+.review-card-attr{font-size:0.75rem;font-weight:600;color:var(--cream);}
+.review-card-role{font-size:0.7rem;color:rgba(224,219,208,0.4);margin-top:3px;line-height:1.4;}
+
+/* ── MARKET ── */
+.market{background:var(--bg);}
+.market-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:60px;align-items:start;}
+.market-item{padding-bottom:24px;border-bottom:1px solid var(--border);margin-bottom:24px;}
+.market-item:last-child{border-bottom:none;margin-bottom:0;}
+.market-item h4{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.market-item p{font-size:0.88rem;line-height:1.75;color:var(--text-dim);}
+.accred-box{background:rgba(107,45,139,0.08);border:1px solid rgba(107,45,139,0.25);border-radius:3px;padding:28px;}
+.accred-box h4{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(107,45,139,0.9);margin-bottom:12px;}
+.accred-box p{font-size:0.88rem;line-height:1.75;color:var(--text-dim);}
+
+/* ── AUTHOR ── */
+.author{background:var(--deep);border-top:1px solid var(--border);}
+.author-grid{display:grid;grid-template-columns:1fr 2fr;gap:80px;align-items:start;margin-top:48px;}
+.author-card{background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:32px;text-align:center;}
+.author-avatar{width:80px;height:80px;border-radius:50%;background:linear-height(135deg,#2a1040,#6B2D8B);border:2px solid var(--border-gold);margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold);}
+.author-card h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;color:var(--cream);margin-bottom:4px;}
+.author-card p{font-size:0.72rem;color:var(--text-dim);margin-bottom:20px;}
+.author-tags{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;}
+.author-tag{font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.2rem 0.6rem;border:1px solid var(--border);color:rgba(224,219,208,0.5);border-radius:2px;}
+.author-bio-text p{font-size:0.92rem;line-height:1.85;color:var(--text-dim);font-weight:300;margin-bottom:16px;}
+.author-bio-text strong{color:var(--cream);font-weight:400;}
+.author-bio-text em{color:var(--gold-l);}
+
+/* ── BOOK DETAILS ── */
+.details{background:var(--bg);}
+.details-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:3px;overflow:hidden;margin-top:48px;}
+.detail-item{background:var(--bg);padding:28px 24px;}
+.detail-label{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(224,219,208,0.35);margin-bottom:7px;}
+.detail-value{font-size:0.92rem;color:var(--cream);font-weight:400;}
+.detail-value a{color:var(--gold);text-decoration:none;}
+.detail-value a:hover{text-decoration:underline;}
+
+/* ── CONTACT ── */
+.contact{background:var(--deep);border-top:1px solid var(--border-gold);}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-top:48px;}
+.contact-intro p{font-size:0.92rem;line-height:1.85;color:var(--text-dim);font-weight:300;margin-bottom:14px;}
+.contact-intro strong{color:var(--cream);font-weight:400;}
+form.pub-form label{display:block;font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(224,219,208,0.4);margin-bottom:6px;margin-top:18px;}
+form.pub-form input,form.pub-form select,form.pub-form textarea{width:100%;padding:11px 14px;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:2px;color:var(--cream);font-family:'Outfit',sans-serif;font-size:0.85rem;outline:none;transition:border-color 0.25s;}
+form.pub-form input:focus,form.pub-form select:focus,form.pub-form textarea:focus{border-color:rgba(201,168,76,0.4);}
+form.pub-form select option{background:#0d0b1a;}
+form.pub-form textarea{min-height:100px;resize:vertical;}
+form.pub-form button{margin-top:22px;width:100%;padding:13px;background:var(--gold);color:#000;font-family:'Outfit',sans-serif;font-weight:700;font-size:0.8rem;letter-spacing:0.14em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;transition:background 0.2s;}
+form.pub-form button:hover{background:var(--gold-l);}
+.form-msg{font-size:0.8rem;margin-top:10px;}
+
+/* ── FOOTER ── */
+footer{padding:32px 52px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;font-size:0.72rem;color:rgba(224,219,208,0.28);}
+footer a{color:rgba(224,219,208,0.28);text-decoration:none;transition:color 0.2s;}
+footer a:hover{color:var(--gold);}
+.footer-right{display:flex;flex-direction:column;align-items:flex-end;gap:4px;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  nav{padding:0 24px;}
+  section,.stats,.hero{padding-left:24px;padding-right:24px;}
+  .hero-inner,.concept-grid,.market-grid,.author-grid,.contact-grid{grid-template-columns:1fr;gap:48px;}
+  .hero-book{display:none;}
+  .reviews-grid{grid-template-columns:1fr;}
+  .details-grid{grid-template-columns:1fr 1fr;}
+  .stats-inner{grid-template-columns:repeat(2,1fr);}
+  .stat{border-bottom:1px solid var(--border);}
+  footer{flex-direction:column;gap:12px;text-align:center;}
+  .footer-right{align-items:center;}
+}
+@media(max-width:480px){
+  .hero-title{font-size:2.8rem;}
+  .details-grid{grid-template-columns:1fr;}
+  .stats-inner{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-left">
+    <a href="https://www.madarlead.com" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;text-decoration:none;">
+      <svg class="nav-logo-orbit" width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="20" cy="20" rx="17" ry="10" stroke="#C9A84C" stroke-width="1.3" transform="rotate(-15 20 20)"/>
+        <circle cx="20" cy="20" r="5" fill="#C9A84C"/>
+        <circle cx="36.4" cy="15.6" r="2.8" fill="#C9A84C"/>
+      </svg>
+      <div class="nav-brand-text">
+        <span class="nav-brand-name"><span>MADAR</span>LEAD</span>
+        <span class="nav-brand-sub">Business Psychology Center</span>
+      </div>
+    </a>
+    <div class="nav-divider"></div>
+    <span class="nav-title">Antigravity</span>
+  </div>
+  <div class="nav-right">
+    <a href="#concept">Concept</a>
+    <a href="#endorsements">Endorsements</a>
+    <a href="#author">Author</a>
+    <a href="#contact" class="nav-cta">Publisher Enquiry</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <p class="hero-eyebrow">Publisher Information · Second Edition 2026</p>
+      <h1 class="hero-title">Anti<em>gravity</em></h1>
+      <p class="hero-sub">A psychology and leadership framework that maps the hidden forces pulling professionals away from their potential — and shows exactly how to resist them.</p>
+      <div class="hero-badges">
+        <span class="badge">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" stroke="#C9A84C" stroke-width="1"/><path d="M3 5l1.5 1.5L7 3.5" stroke="#C9A84C" stroke-width="1" stroke-linecap="round"/></svg>
+          AIOBP Accredited
+        </span>
+        <span class="badge">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" stroke="#C9A84C" stroke-width="1"/><path d="M3 5l1.5 1.5L7 3.5" stroke="#C9A84C" stroke-width="1" stroke-linecap="round"/></svg>
+          Marshall Goldsmith Endorsement
+        </span>
+        <span class="badge">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" stroke="#C9A84C" stroke-width="1"/><path d="M3 5l1.5 1.5L7 3.5" stroke="#C9A84C" stroke-width="1" stroke-linecap="round"/></svg>
+          Kirkus Reviews
+        </span>
+        <span class="badge">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" stroke="#C9A84C" stroke-width="1"/><path d="M3 5l1.5 1.5L7 3.5" stroke="#C9A84C" stroke-width="1" stroke-linecap="round"/></svg>
+          Available on Amazon
+        </span>
+      </div>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-gold">Publisher Enquiry</a>
+        <a href="/" class="btn-outline">View Book Site</a>
+      </div>
+    </div>
+    <div class="hero-book">
+      <div class="book-cover">
+        <div class="book-edition">2nd Ed. · 2026</div>
+        <div class="book-orbit">
+          <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+            <ellipse cx="50" cy="50" rx="42" ry="25" stroke="rgba(201,168,76,0.3)" stroke-width="1" transform="rotate(-15 50 50)"/>
+            <ellipse cx="50" cy="50" rx="30" ry="16" stroke="rgba(201,168,76,0.2)" stroke-width="1" transform="rotate(-15 50 50)"/>
+            <circle cx="50" cy="50" r="12" fill="rgba(107,45,139,0.8)" stroke="rgba(201,168,76,0.4)" stroke-width="1"/>
+            <circle cx="50" cy="50" r="5" fill="#C9A84C"/>
+            <circle cx="89" cy="39" r="5" fill="rgba(224,219,208,0.6)"/>
+          </svg>
+        </div>
+        <div class="book-title-text">
+          <h2>Antigravity</h2>
+          <p>Break Free from the Forces<br>that Shape You</p>
+        </div>
+        <div class="book-author-text">
+          <p>Shadi Obeidat</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat">
+      <div class="stat-num">2026</div>
+      <div class="stat-label">Second Edition</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">20+</div>
+      <div class="stat-label">Years of Field Research</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">#1</div>
+      <div class="stat-label">Thinker50 Endorsement</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">MENA</div>
+      <div class="stat-label">Primary Market + Global</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONCEPT -->
+<section class="concept" id="concept">
+  <div class="sec-inner">
+    <span class="sec-label">The Concept</span>
+    <h2 class="sec-title">What is <em>Antigravity?</em></h2>
+    <p class="sec-lead">A framework rooted in Newton's law of gravitation — applied to human psychology, leadership, and personal transformation.</p>
+    <div class="concept-grid">
+      <div class="concept-text">
+        <p>Every person operates under invisible forces — habits, fears, conditioning, social dynamics — that pull them away from their authentic potential. <strong>Antigravity</strong> names these forces precisely, maps their origins in behavioural science and spiritual tradition, and gives readers a working system to resist them.</p>
+        <p>Unlike conventional self-help, the framework is <strong>field-tested</strong>: deployed in pharmaceutical companies, leadership programmes, and coaching engagements across the Middle East over two decades. It is both a book and an accredited training system, backed by one of the world's most recognised executive coaches.</p>
+        <p>The result is a rare synthesis — intellectually rigorous, practically actionable, and spiritually grounded — positioned at the intersection of <strong>psychology, neuroscience, and leadership development</strong>.</p>
+      </div>
+      <div class="concept-pillars">
+        <div class="pillar">
+          <div class="pillar-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#C9A84C" stroke-width="1.2"/><path d="M8 4v4l3 2" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round"/></svg>
+          </div>
+          <div class="pillar-body">
+            <h4>Gravity Forces</h4>
+            <p>The invisible behavioural patterns — identified, named, and mapped to their psychological sources.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2L8 14M2 8L14 8" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round"/></svg>
+          </div>
+          <div class="pillar-body">
+            <h4>The Orbit State</h4>
+            <p>Neither free fall nor rigid control — the stable dynamic equilibrium of a high-performing self.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 12L8 4L12 12" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 9.5h5" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round"/></svg>
+          </div>
+          <div class="pillar-body">
+            <h4>Practical Tools</h4>
+            <p>Exercises, assessments, and digital tools (ORBIT app) that translate insight into daily practice.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3" fill="none" stroke="#C9A84C" stroke-width="1.2"/><ellipse cx="8" cy="8" rx="7" ry="3.5" stroke="#C9A84C" stroke-width="1.2" transform="rotate(-30 8 8)"/></svg>
+          </div>
+          <div class="pillar-body">
+            <h4>Accredited Programme</h4>
+            <p>The book underpins an AIOBP-certified training system delivered across MENA corporates.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENDORSEMENTS -->
+<section class="endorsements" id="endorsements">
+  <div class="sec-inner">
+    <span class="sec-label">Endorsements</span>
+    <h2 class="sec-title">What Leaders<br><em>Are Saying</em></h2>
+    <div class="mg-quote">
+      <blockquote>"Antigravity offers a fresh and insightful framework for understanding the invisible forces that shape our behavior. A must-read for anyone committed to conscious leadership."</blockquote>
+      <div class="mg-attr">
+        <div class="mg-attr-dot"></div>
+        <div>
+          <div class="mg-attr-name">Marshall Goldsmith</div>
+          <div class="mg-attr-role">Thinker50 #1 Executive Coach · Author, <em>What Got You Here Won't Get You There</em></div>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <blockquote>"A thoughtful synthesis of psychology and physics that offers practical tools for personal transformation."</blockquote>
+        <div class="review-card-attr">Kirkus Reviews</div>
+        <div class="review-card-role">Independent book review journal</div>
+      </div>
+      <div class="review-card">
+        <blockquote>"Habits can act as gravitational forces that impede progress if one becomes inattentive. This programme provides tools to effectively utilise habits to attain your objectives."</blockquote>
+        <div class="review-card-attr">Saif Haddadin</div>
+        <div class="review-card-role">Founder &amp; Director General, MBA · Sawaaid For Healthcare Technology</div>
+      </div>
+      <div class="review-card">
+        <blockquote>"The Antigravity programme emphasised harmony between employees and business functions, leading to improved collaboration and communication."</blockquote>
+        <div class="review-card-attr">Imad Issa</div>
+        <div class="review-card-role">Regional Sales Manager, GCC · Octapharma Regional Office</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARKET -->
+<section class="market" id="market">
+  <div class="sec-inner">
+    <span class="sec-label">Market Opportunity</span>
+    <h2 class="sec-title">Why This Book,<br><em>Why Now</em></h2>
+    <div class="market-grid">
+      <div>
+        <div class="market-item">
+          <h4>Primary Audience</h4>
+          <p>Business professionals, managers, executives, and coaches seeking a psychology-grounded framework for behavioural change and leadership. Strong existing traction in the pharmaceutical and healthcare sectors across MENA.</p>
+        </div>
+        <div class="market-item">
+          <h4>Geographic Focus</h4>
+          <p>The MENA region — a high-growth market for leadership and professional development titles — with strong crossover appeal for global self-help, business psychology, and mindfulness categories.</p>
+        </div>
+        <div class="market-item">
+          <h4>Competitive Position</h4>
+          <p>Sits at the intersection of behavioural science (think <em>Atomic Habits</em>), leadership coaching (think <em>What Got You Here</em>), and spiritual psychology — a rare, defensible positioning with an accreditation layer most self-help books lack.</p>
+        </div>
+      </div>
+      <div>
+        <div class="accred-box" style="margin-bottom:20px;">
+          <h4>AIOBP Accreditation</h4>
+          <p>The Antigravity Training Programme carries official accreditation from the Academy of International Businesses &amp; Professionals — giving the book institutional credibility and a ready-made corporate sales channel beyond bookstores.</p>
+        </div>
+        <div class="market-item">
+          <h4>Digital Ecosystem</h4>
+          <p>The book is supported by the <strong style="color:var(--cream)">ORBIT App</strong> — a digital companion that embeds the framework into daily practice. This creates a durable product ecosystem that extends reader engagement beyond the book itself.</p>
+        </div>
+        <div class="market-item">
+          <h4>Author Platform</h4>
+          <p>Shadi Obeidat leads the Business Psychology Center in Amman — one of the region's foremost applied behavioural science institutions. Active corporate client base provides a direct channel for bulk and institutional sales.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTHOR -->
+<section class="author" id="author">
+  <div class="sec-inner">
+    <span class="sec-label">About the Author</span>
+    <div class="author-grid">
+      <div class="author-card">
+        <div class="author-avatar">S</div>
+        <h3>Shadi Obeidat</h3>
+        <p>Amman, Jordan</p>
+        <div class="author-tags">
+          <span class="author-tag">Psychology</span>
+          <span class="author-tag">Consulting</span>
+          <span class="author-tag">Neuroscience</span>
+          <span class="author-tag">Leadership</span>
+          <span class="author-tag">MENA</span>
+        </div>
+      </div>
+      <div class="author-bio-text">
+        <p>Shadi Obeidat is a management consultant, author, and the founder of the <strong>Business Psychology Center</strong> in Amman — one of the region's leading institutions for applied behavioural science in professional and personal development contexts.</p>
+        <p><em>Antigravity</em> emerges from more than two decades working at the intersection of human psychology, organisational behaviour, neuroscience, and spiritual practice. It is both an intellectual synthesis and a working tool — shaped by direct experience with individuals and teams navigating the invisible forces that pull them from their potential.</p>
+        <p>Obeidat is also the creator of the accredited <strong>Antigravity Training Programme</strong> and the <strong>ORBIT app</strong> — bringing the book's framework into daily digital practice for corporate clients across the MENA region.</p>
+        <p style="margin-top:24px;"><a href="https://www.madarlead.com" target="_blank" style="color:var(--gold);font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;">madarlead.com ↗</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK DETAILS -->
+<section class="details">
+  <div class="sec-inner">
+    <span class="sec-label">Book Details</span>
+    <h2 class="sec-title">Publication <em>Information</em></h2>
+    <div class="details-grid">
+      <div class="detail-item">
+        <div class="detail-label">Title</div>
+        <div class="detail-value">Antigravity</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Subtitle</div>
+        <div class="detail-value">Break Free from the Forces That Shape You</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Author</div>
+        <div class="detail-value">Shadi Obeidat</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Edition</div>
+        <div class="detail-value">Second Edition · 2026</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">ISBN</div>
+        <div class="detail-value">978-1-5187-2312-8</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Current Availability</div>
+        <div class="detail-value"><a href="https://www.amazon.com/dp/1518723128" target="_blank" rel="noopener">Amazon (Self-published) ↗</a></div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Category</div>
+        <div class="detail-value">Business / Self-Help / Psychology</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Accreditation</div>
+        <div class="detail-value">AIOBP Certified Training Programme</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Language</div>
+        <div class="detail-value">English (Arabic translation opportunity)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="sec-inner">
+    <span class="sec-label">Get in Touch</span>
+    <h2 class="sec-title">Publisher <em>Enquiry</em></h2>
+    <div class="contact-grid">
+      <div class="contact-intro">
+        <p>For publishing rights, co-publishing arrangements, bulk orders, translation rights, or any enquiry about <strong>Antigravity</strong> — reach out directly.</p>
+        <p>We welcome conversations with publishers interested in the MENA market, global self-help, leadership, and business psychology categories.</p>
+        <p style="margin-top:28px;font-size:0.8rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);">Direct contact</p>
+        <p style="margin-top:8px;"><a href="mailto:shadi@psychologytobusiness.com" style="color:var(--text-dim);text-decoration:none;font-size:0.88rem;">shadi@psychologytobusiness.com</a></p>
+        <p style="margin-top:4px;"><a href="https://www.madarlead.com" target="_blank" style="color:var(--text-dim);text-decoration:none;font-size:0.88rem;">madarlead.com ↗</a></p>
+        <p style="margin-top:4px;font-size:0.82rem;color:rgba(224,219,208,0.4);">Business Psychology Center · Amman, Jordan</p>
+      </div>
+      <form class="pub-form" id="pub-enquiry-form" data-type="contact">
+        <label>Your Name</label>
+        <input type="text" name="name" required placeholder="Full name">
+        <label>Organisation / Publisher</label>
+        <input type="text" name="organisation" placeholder="Company or publisher name">
+        <label>Email Address</label>
+        <input type="email" name="email" required placeholder="your@email.com">
+        <label>Enquiry Type</label>
+        <select name="message">
+          <option value="Publishing Rights Enquiry">Publishing Rights</option>
+          <option value="Co-Publishing Enquiry">Co-Publishing</option>
+          <option value="Translation Rights Enquiry">Translation Rights</option>
+          <option value="Bulk / Corporate Order">Bulk / Corporate Order</option>
+          <option value="General Publisher Enquiry">General Enquiry</option>
+        </select>
+        <label>Message</label>
+        <textarea name="message_body" placeholder="Tell us about your interest in Antigravity…"></textarea>
+        <button type="submit">Send Enquiry →</button>
+        <p class="form-msg" id="pub-form-msg"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>© 2026 Shadi Obeidat · Business Psychology Center, Amman</div>
+  <div style="font-family:'Cormorant Garamond',serif;font-style:italic;color:rgba(201,168,76,0.35);">Antigravity · Second Edition</div>
+  <div class="footer-right">
+    <a href="mailto:shadi@psychologytobusiness.com">shadi@psychologytobusiness.com</a>
+    <a href="https://www.madarlead.com" target="_blank" rel="noopener" style="color:rgba(201,168,76,0.5);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;">madarlead.com ↗</a>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/js/supabase-client.js"></script>
+<script>
+document.getElementById('pub-enquiry-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn = e.target.querySelector('button');
+  const msg = document.getElementById('pub-form-msg');
+  btn.disabled = true;
+  btn.textContent = '...';
+  const fd = new FormData(e.target);
+  const name = fd.get('name');
+  const email = fd.get('email');
+  const org = fd.get('organisation') || '';
+  const enqType = fd.get('message');
+  const body = fd.get('message_body') || '';
+  const fullMessage = (org ? '[' + org + '] ' : '') + enqType + (body ? '\n\n' + body : '');
+  const { error } = await window.db.from('contacts').insert({ name, email, message: fullMessage });
+  if (error) {
+    msg.textContent = 'Something went wrong. Please email us directly.';
+    msg.style.color = '#e53e3e';
+  } else {
+    msg.textContent = 'Enquiry received. We will be in touch shortly.';
+    msg.style.color = '#c9a84c';
+    e.target.reset();
+  }
+  btn.disabled = false;
+  btn.textContent = 'Send Enquiry →';
+});
+</script>
+</body>
+</html>
